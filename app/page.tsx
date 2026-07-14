@@ -73,7 +73,9 @@ export default function Home() {
       <footer className="site-footer">
         <p className="contact">
           Say hello:{' '}
-          <a href="mailto:wes@threshhold.com">wes@threshhold.com</a>
+          <a href="mailto:wesleynorris.design@gmail.com">
+            wesleynorris.design@gmail.com
+          </a>
         </p>
         <div className="links">
           <a
