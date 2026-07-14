@@ -89,8 +89,13 @@ export default function Brand() {
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/brand-designsystem.jpg"
-              alt="The Threshold design system: brand, colors, type, spacing, and components"
+              src="/images/brand-designsystem-1.jpg"
+              alt="The Threshold design system: brand, colors, and type"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/brand-designsystem-2.jpg"
+              alt="The Threshold design system: spacing and components"
             />
           </div>
           <p className="pageframe-hint">Scroll the full design system</p>
