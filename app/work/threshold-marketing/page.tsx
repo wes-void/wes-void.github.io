@@ -130,6 +130,30 @@ export default function ThresholdMarketing() {
         </figure>
       </section>
 
+      <section>
+        <h2>The site’s interactive centerpiece</h2>
+        <p>
+          One surface on this site does more than describe the offer, it runs
+          it. The Agent-Ready assessment is a three-part diagnostic that
+          qualifies leads by being genuinely useful, and it’s the “Agent
+          Ready?” item in the nav above. It lives on the marketing site, but
+          it’s a product in its own right, so it gets its own case study.
+        </p>
+        <figure>
+          <Link href="/work/assessment" className="shot" aria-label="Open the assessment case study">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/mkt-assessment.jpg"
+              alt="The Agent-Ready assessment hub with three diagnostic tools"
+            />
+          </Link>
+          <figcaption>Agent-Ready assessment: a diagnostic, not a form</figcaption>
+        </figure>
+        <Link className="more" href="/work/assessment">
+          See the full assessment case study
+        </Link>
+      </section>
+
       <nav className="footer-nav site-footer">
         <p className="contact">
           Next: <Link href="/work/assessment">the assessment journey</Link>
