@@ -66,16 +66,16 @@ void main() {
   // thin-film interference palette (oil on water)
   vec3 iri = 0.5 + 0.5 * cos(6.28318 * (h * 3.8 + vec3(0.00, 0.33, 0.67)) + t * 1.5);
   iri = iri * iri * (3.0 - 2.0 * iri);
-  // petrol bias: magenta/teal up, red down
-  iri *= vec3(0.92, 0.84, 1.18);
+  // petrol bias: violet/blue/teal only — green and red held down
+  iri *= vec3(0.6, 0.42, 1.2);
 
   // sheen lives in a band of the field, patch-masked so black pools remain
   float sheen = smoothstep(0.38, 0.5, h) * (1.0 - smoothstep(0.6, 0.78, h));
-  float patch = smoothstep(-0.22, 0.28, q.x);
-  sheen = pow(sheen, 1.15) * patch;
+  float patch = smoothstep(-0.18, 0.32, q.x);
+  sheen = pow(sheen, 1.3) * patch;
 
   vec3 base = vec3(0.026, 0.024, 0.036);
-  vec3 col = base + iri * sheen * 0.5;
+  vec3 col = base + iri * sheen * 0.26;
 
   // gentle vignette to keep edges quiet
   float vig = 1.0 - 0.38 * pow(length(uv - vec2(0.5, 0.45)), 1.6);
