@@ -202,7 +202,7 @@ export default function ThresholdOS() {
 
       <nav className="footer-nav site-footer">
         <p className="contact">
-          Next: <Link href="/work/threshold-marketing">the marketing site</Link>
+          Next: <Link href="/work/brand">the brand system</Link>
         </p>
       </nav>
     </main>

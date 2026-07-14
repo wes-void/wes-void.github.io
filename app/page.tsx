@@ -11,8 +11,16 @@ const projects = [
     img: '/images/threshold-os-cover.jpg',
   },
   {
-    slug: 'threshold-marketing',
+    slug: 'brand',
     num: '02',
+    title: 'A brand system you can page through, from mark to marketing',
+    body: 'The Threshold identity: logo, palette, typography, and application, built end-to-end and documented in a brand book. Page through the real thing, not a screenshot of it.',
+    caption: 'Threshold / brand identity',
+    img: '/brand/page-01.jpg',
+  },
+  {
+    slug: 'threshold-marketing',
+    num: '03',
     title: 'A go-to-market website built around a narrative, not a feature list',
     body: 'Threshold’s public site through two GTM pivots: a company-wide audience shift, then a consultation-led offer. Strategy, copy, design, and code shipped as one continuous system.',
     caption: 'threshhold.com / GTM v0.9',
@@ -20,7 +28,7 @@ const projects = [
   },
   {
     slug: 'assessment',
-    num: '03',
+    num: '04',
     title: 'An interactive assessment that qualifies leads by being genuinely useful',
     body: 'A three-part self-serve journey (friction mapping, readiness scoring, a first-loop simulation) that turns “book a demo” into an experience worth having on its own.',
     caption: 'Threshold Experiences / assessment journey',
