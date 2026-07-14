@@ -65,6 +65,19 @@ export default function ThresholdOS() {
           </span>
           <figcaption>Client portal: home</figcaption>
         </figure>
+        <figure>
+          <span className="shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/os-narrative.jpg"
+              alt="Outcome detail narrative: why this outcome exists, what must be true to succeed"
+            />
+          </span>
+          <figcaption>
+            An outcome reads like a memo: why it exists, what must be true,
+            what success looks like
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -108,10 +121,26 @@ export default function ThresholdOS() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/os-outcome.jpg"
-              alt="Current outcome screen with activity timeline"
+              alt="Outcome detail with start conditions and the client approval decision"
             />
           </span>
-          <figcaption>Current outcome: lifecycle and activity timeline</figcaption>
+          <figcaption>
+            The approval moment: start conditions gate execution until the
+            client says go
+          </figcaption>
+        </figure>
+        <figure>
+          <span className="shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/os-drift.jpg"
+              alt="Internal operator dashboard flagging alignment drift for confirmation"
+            />
+          </span>
+          <figcaption>
+            The other side of the glass: the operator view flags drift when
+            the alignment changes underneath live work
+          </figcaption>
         </figure>
       </section>
 
