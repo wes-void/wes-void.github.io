@@ -4,11 +4,11 @@
 --------------------------------------------------------------------------- */
 
 :root {
-  --paper: #07070a;
-  --ink: #f2f1ee;
-  --ink-soft: #a3a1ab;
-  --hairline: rgba(242, 241, 238, 0.16);
-  --accent: #8be0cd; /* used sparingly: links + focus */
+  --paper: #fcfcfd;
+  --ink: #101014;
+  --ink-soft: #5c5a66;
+  --hairline: rgba(16, 16, 20, 0.14);
+  --accent: #1e3ded; /* cobalt: links + focus */
 
   --measure: 34em; /* body paragraph width */
   --gutter: clamp(1.25rem, 5vw, 5rem);
@@ -49,11 +49,11 @@ body {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  /* static petrol tint as fallback while WebGL boots (or if it can't) */
+  /* static tint as fallback while WebGL boots (or if it can't) */
   background:
-    radial-gradient(52% 38% at 78% 12%, rgba(70, 24, 96, 0.14), transparent 70%),
-    radial-gradient(40% 32% at 12% 32%, rgba(22, 40, 110, 0.12), transparent 70%),
-    radial-gradient(46% 40% at 62% 86%, rgba(20, 60, 90, 0.1), transparent 70%),
+    radial-gradient(40% 30% at 80% 8%, rgba(30, 61, 237, 0.08), transparent 70%),
+    radial-gradient(34% 26% at 10% 28%, rgba(80, 200, 235, 0.07), transparent 70%),
+    radial-gradient(38% 30% at 60% 88%, rgba(220, 120, 230, 0.05), transparent 70%),
     var(--paper);
 }
 
@@ -65,6 +65,21 @@ body {
 .depth-inner {
   transform-style: preserve-3d;
   will-change: transform, opacity;
+}
+
+/* soft white halo keeps type crisp when a vein passes beneath it */
+.intro h1,
+.intro .sub,
+.project h2,
+.project p,
+.case h1,
+.case .lede,
+.case section h2,
+.case section p,
+.site-footer .contact {
+  text-shadow:
+    0 1px 18px rgba(252, 252, 253, 0.85),
+    0 0 6px rgba(252, 252, 253, 0.6);
 }
 
 a {
@@ -136,7 +151,7 @@ img {
 .project .shot {
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: rgba(242, 241, 238, 0.04);
+  background: rgba(16, 16, 20, 0.03);
   border: 1px solid var(--hairline);
   display: flex;
   align-items: center;
@@ -317,7 +332,7 @@ img {
 
 .case .shot {
   width: 100%;
-  background: rgba(242, 241, 238, 0.04);
+  background: rgba(16, 16, 20, 0.03);
   border: 1px solid var(--hairline);
   overflow: hidden;
 }

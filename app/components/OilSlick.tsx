@@ -60,29 +60,27 @@ void main() {
     fbm(p * 1.3 + vec2(t, drift * 0.4)),
     fbm(p * 1.3 + vec2(5.2, 1.3) - vec2(t * 0.7, drift * 0.6))
   );
-  float h = fbm(p * 1.7 + 2.2 * q + vec2(0.0, drift));
+  float h = fbm(p * 2.2 + 2.2 * q + vec2(0.0, drift));
   h = 0.5 + 0.5 * (h * 1.6); // remap signed fbm to ~0..1
 
-  // thin-film interference palette (oil on water)
-  vec3 iri = 0.5 + 0.5 * cos(6.28318 * (h * 3.8 + vec3(0.00, 0.33, 0.67)) + t * 1.5);
-  iri = iri * iri * (3.0 - 2.0 * iri);
-  // petrol bias: violet/blue/teal only — green and red held down
-  iri *= vec3(0.6, 0.42, 1.2);
+  // liquid chrome on white: cobalt cores, cyan halo, magenta fringe
+  float patch = smoothstep(-0.06, 0.26, q.x);
+  float d = abs(h - 0.58);
 
-  // sheen lives in a band of the field, patch-masked so black pools remain
-  float sheen = smoothstep(0.38, 0.5, h) * (1.0 - smoothstep(0.6, 0.78, h));
-  float patch = smoothstep(-0.18, 0.32, q.x);
-  sheen = pow(sheen, 1.3) * patch;
+  float core = (1.0 - smoothstep(0.022, 0.038, d)) * patch;
+  float halo = smoothstep(0.026, 0.04, d) * (1.0 - smoothstep(0.052, 0.068, d)) * patch;
+  float fringe = smoothstep(0.058, 0.07, d) * (1.0 - smoothstep(0.078, 0.092, d)) * patch;
 
-  vec3 base = vec3(0.026, 0.024, 0.036);
-  vec3 col = base + iri * sheen * 0.26;
+  // soft gray marbling so the white reads liquid, not flat
+  float chrome = 1.0 - 0.07 * smoothstep(-0.25, 0.45, q.y);
 
-  // gentle vignette to keep edges quiet
-  float vig = 1.0 - 0.38 * pow(length(uv - vec2(0.5, 0.45)), 1.6);
-  col *= vig;
+  vec3 col = vec3(0.988, 0.988, 0.992) * chrome;
+  col = mix(col, vec3(0.45, 0.92, 1.0), halo * 0.8);
+  col = mix(col, vec3(0.93, 0.45, 0.95), fringe * 0.5);
+  col = mix(col, vec3(0.07, 0.13, 0.91), min(1.0, core * 1.3));
 
   // grain
-  col += (hash1(gl_FragCoord.xy + fract(u_time)) - 0.5) * 0.022;
+  col += (hash1(gl_FragCoord.xy + fract(u_time)) - 0.5) * 0.012;
 
   gl_FragColor = vec4(col, 1.0);
 }
