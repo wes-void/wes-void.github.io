@@ -6,7 +6,6 @@
    design's literal hexes, matching Ro's "Threshold Experiences" handoff. */
 
 import type { CSSProperties } from 'react';
-import Link from 'next/link';
 import { loopsForGoal, getAgency, AGENCY_META } from '../loops-data';
 
 /* Maps the design's short --text-* aliases onto the site's brand tokens so the
@@ -170,10 +169,11 @@ export function LibraryLoopLinks({ goalId, industry, heading = 'Explore these lo
           const level = getAgency(loop.slug);
           const agentic = level === 'agentic';
           return (
-            <Link
+            /* non-interactive in the portfolio build — the real loops library
+               isn't part of this site, so these are display-only cards */
+            <div
               key={loop.slug}
-              href={`/loops/${loop.slug}`}
-              style={{ display: 'flex', flexDirection: 'column', gap: 6, padding: '15px 16px', borderRadius: 12, border: '1px solid rgba(255,255,255,.09)', background: 'rgba(255,255,255,.025)', textDecoration: 'none' }}
+              style={{ display: 'flex', flexDirection: 'column', gap: 6, padding: '15px 16px', borderRadius: 12, border: '1px solid rgba(255,255,255,.09)', background: 'rgba(255,255,255,.025)' }}
             >
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 10.5, letterSpacing: '.08em', textTransform: 'uppercase', color: agentic ? '#9FD3CE' : 'var(--text-3)' }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', flex: '0 0 auto', background: agentic ? '#6AB0AB' : 'rgba(255,255,255,.28)' }} />
@@ -181,7 +181,7 @@ export function LibraryLoopLinks({ goalId, industry, heading = 'Explore these lo
               </span>
               <span style={{ font: '600 .98rem var(--font-body)', color: 'var(--text-0)' }}>{loop.name}</span>
               <span style={{ fontSize: '.83rem', lineHeight: 1.4, color: 'var(--text-3)' }}>{loop.tagline}</span>
-            </Link>
+            </div>
           );
         })}
       </div>

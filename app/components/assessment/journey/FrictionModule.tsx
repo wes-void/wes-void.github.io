@@ -5,7 +5,6 @@
    the email capture now lives at the journey level, so this module no longer
    owns it. Scoring and copy are unchanged. */
 
-import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { INDUSTRIES, COMPANY_SIZES, REVENUE_BANDS } from '../../../lib/qualification';
 import { SCALE, FRICTION_QS, EMP, fmtInt, fmtMoney, visibleToolGroups, applyToolToggle, effectiveSelectedIds, FRICTION_DIMENSION_GOAL } from '../../../lib/assessment';
@@ -13,7 +12,6 @@ import type { FrictionModel } from '../../../lib/assessment';
 import type { JourneyState } from './useJourney';
 import { aliasVars, choiceStyle, pillStyle, dotStyle, Arrow, BackArrow, DIAL_C, MiniGauge, ResultsNav, HubBackLink, LibraryLoopLinks } from './shared';
 import type { NextCta } from './shared';
-import { writeDemoPrefill } from '../../../lib/demo-prefill';
 
 const SIZES = COMPANY_SIZES.map((o) => o.label);
 const REV = REVENUE_BANDS.map((o) => o.label);
@@ -135,20 +133,13 @@ export function FrictionModule({ state, patch, model, nextCta, onNext, onBack, o
             redoLabel="Recalculate"
             onRedo={onRestart}
             extra={
-              <Link
-                href="/demo"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: '#9FD3CE', font: '500 14px var(--font-body)', textDecoration: 'underline', textUnderlineOffset: 3 }}
-                onClick={() => writeDemoPrefill({
-                  from: 'assessment',
-                  name: state.lead?.name ?? '',
-                  email: state.lead?.email ?? '',
-                  website: state.lead?.website ?? '',
-                  score: model.score,
-                  recommendedLoop: model.firstLoop,
-                })}
+              /* inert in the portfolio build — booking isn't wired here */
+              <span
+                aria-disabled
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: '#9FD3CE', font: '500 14px var(--font-body)', textDecoration: 'underline', textUnderlineOffset: 3, cursor: 'default' }}
               >
                 Book a Free Consultation
-              </Link>
+              </span>
             }
           />
 

@@ -4,13 +4,11 @@
    complete; folds friction + readiness + first loop into one headline answer,
    a scannable three-card recap, and the recommended free first loop. */
 
-import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { fmtInt, fmtMoney } from '../../../lib/assessment';
 import type { FrictionModel, ReadinessModel, FirstLoopModel } from '../../../lib/assessment';
 import type { Screen } from './useJourney';
 import { aliasVars, primaryBtn, Arrow, DIAL_C } from './shared';
-import { writeDemoPrefill } from '../../../lib/demo-prefill';
 
 interface FinaleProps {
   friction: FrictionModel;
@@ -103,9 +101,10 @@ export function Finale({ friction, readiness, firstLoop, impact, anim, lead, ind
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14, marginTop: 34 }}>
-          <Link href="https://threshhold.com" target="_blank" rel="noreferrer" style={primaryBtn} onClick={() => writeDemoPrefill({ from: 'assessment', name: lead?.name ?? '', email: lead?.email ?? '', website: lead?.website ?? '', score: friction.score, recommendedLoop: firstLoop.cap })}>
+          {/* inert in the portfolio build — booking isn't wired here */}
+          <span aria-disabled style={{ ...primaryBtn, cursor: 'default' }}>
             Book a Free Consultation <Arrow />
-          </Link>
+          </span>
           <button onClick={onBack} style={{ background: 'none', border: 'none', color: 'var(--text-3)', font: '500 14px var(--font-body)', cursor: 'pointer', textDecoration: 'underline', textUnderlineOffset: 3 }}>Back to journey</button>
         </div>
       </div>
