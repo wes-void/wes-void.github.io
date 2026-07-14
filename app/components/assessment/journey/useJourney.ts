@@ -102,7 +102,21 @@ export function useJourney() {
 
   const patch = useCallback((p: Partial<JourneyState>) => setState((s) => ({ ...s, ...p })), []);
 
-  const top = useCallback(() => { try { window.scrollTo(0, 0); } catch { /* noop */ } }, []);
+  // Snap to the top of the embed when this journey is mounted inside the
+  // portfolio's `.assessment-live` frame, so advancing a step doesn't yank the
+  // reader up to the top of the whole case-study page. Falls back to the top of
+  // the window when rendered standalone.
+  const top = useCallback(() => {
+    try {
+      const host = document.querySelector('.assessment-live') as HTMLElement | null;
+      if (host) {
+        const y = host.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: Math.max(0, y - 12), behavior: 'auto' });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    } catch { /* noop */ }
+  }, []);
 
   // Hydrate from localStorage on mount; always land on the hub.
   useEffect(() => {
