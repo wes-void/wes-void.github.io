@@ -4,11 +4,11 @@
 --------------------------------------------------------------------------- */
 
 :root {
-  --paper: #fefefc;
-  --ink: #111110;
-  --ink-soft: #55534e;
-  --hairline: #e8e6e1;
-  --accent: #1440e6; /* used sparingly: links + focus */
+  --paper: #07070a;
+  --ink: #f2f1ee;
+  --ink-soft: #a3a1ab;
+  --hairline: rgba(242, 241, 238, 0.16);
+  --accent: #8be0cd; /* used sparingly: links + focus */
 
   --measure: 34em; /* body paragraph width */
   --gutter: clamp(1.25rem, 5vw, 5rem);
@@ -38,6 +38,33 @@ body {
 ::selection {
   background: var(--ink);
   color: var(--paper);
+}
+
+/* --- oil slick + depth scene --------------------------------------------- */
+
+.oil-slick {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  /* static petrol tint as fallback while WebGL boots (or if it can't) */
+  background:
+    radial-gradient(52% 38% at 78% 12%, rgba(96, 30, 120, 0.2), transparent 70%),
+    radial-gradient(40% 32% at 12% 32%, rgba(16, 96, 88, 0.16), transparent 70%),
+    radial-gradient(46% 40% at 62% 86%, rgba(30, 44, 130, 0.14), transparent 70%),
+    var(--paper);
+}
+
+.depth {
+  perspective: 1100px;
+  perspective-origin: 50% 40%;
+}
+
+.depth-inner {
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
 }
 
 a {
@@ -109,7 +136,7 @@ img {
 .project .shot {
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: #f1efe9;
+  background: rgba(242, 241, 238, 0.04);
   border: 1px solid var(--hairline);
   display: flex;
   align-items: center;
@@ -290,7 +317,7 @@ img {
 
 .case .shot {
   width: 100%;
-  background: #f1efe9;
+  background: rgba(242, 241, 238, 0.04);
   border: 1px solid var(--hairline);
   overflow: hidden;
 }

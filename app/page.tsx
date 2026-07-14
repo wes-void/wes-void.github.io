@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Depth } from './components/Depth'
 
 const projects = [
   {
@@ -47,7 +48,8 @@ export default function Home() {
       </header>
 
       {projects.map((p) => (
-        <article className="project" key={p.slug}>
+        <Depth key={p.slug}>
+        <article className="project">
           <figure>
             <Link href={`/work/${p.slug}`} className="shot" aria-hidden>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -65,6 +67,7 @@ export default function Home() {
             See more
           </Link>
         </article>
+        </Depth>
       ))}
 
       <footer className="site-footer">

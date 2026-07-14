@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Instrument_Sans, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
+import { OilSlick } from './components/OilSlick'
 
 const sans = Instrument_Sans({
   subsets: ['latin'],
@@ -28,7 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <OilSlick />
+        {children}
+      </body>
     </html>
   )
 }

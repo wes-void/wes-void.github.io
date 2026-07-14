@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
-  <rect width="1600" height="1000" fill="#f1efe9"/>
-  <rect x="0.5" y="0.5" width="1599" height="999" fill="none" stroke="#e8e6e1"/>
-  <line x1="0" y1="0" x2="1600" y2="1000" stroke="#e8e6e1" stroke-width="1"/>
-  <line x1="1600" y1="0" x2="0" y2="1000" stroke="#e8e6e1" stroke-width="1"/>
-  <rect x="620" y="465" width="360" height="70" fill="#f1efe9"/>
-  <text x="800" y="508" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="22" letter-spacing="2" fill="#8a8781">SCREENSHOT / CLIENT HOME</text>
+  <rect width="1600" height="1000" fill="#0c0c10"/>
+  <rect x="0.5" y="0.5" width="1599" height="999" fill="none" stroke="#232329"/>
+  <line x1="0" y1="0" x2="1600" y2="1000" stroke="#1a1a20" stroke-width="1"/>
+  <line x1="1600" y1="0" x2="0" y2="1000" stroke="#1a1a20" stroke-width="1"/>
+  <rect x="600" y="462" width="400" height="76" fill="#0c0c10"/>
+  <text x="800" y="508" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="22" letter-spacing="2" fill="#6d6b76">SCREENSHOT / CLIENT HOME</text>
 </svg>
