@@ -159,58 +159,50 @@ img {
   padding-bottom: var(--block-gap);
 }
 
-.project figure {
-  margin-bottom: clamp(2rem, 5vh, 3.5rem);
-}
-
-.project .shot {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  background: rgba(16, 16, 20, 0.03);
-  border: 1px solid var(--hairline);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.project .shot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
-/* full-bleed designed covers (e.g. the brand book) anchor left so the
-   title edge is never cropped */
-.project .shot img.cover-left {
-  object-position: left center;
-}
-
-.project figcaption,
+/* the caption leads; text carries the block, the image only teases */
+.project-caption,
 .meta {
   font-family: var(--font-mono), monospace;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   color: var(--ink-soft);
-  margin-top: 0.875rem;
   text-transform: uppercase;
 }
 
 .project h2 {
-  font-size: clamp(2rem, 4.6vw, 4rem);
+  margin-top: 1.125rem;
+  font-size: clamp(2.125rem, 4.8vw, 4rem);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.02em;
   max-width: 14em;
+  text-wrap: balance;
 }
 
-.project p {
+.project > p {
   margin-top: 1.5rem;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
   line-height: 1.55;
   color: var(--ink-soft);
   max-width: var(--measure);
+}
+
+/* image tease: a top slice of the screenshot that dissolves into the page,
+   so the visual invites the click instead of giving everything away */
+.project-peek {
+  display: block;
+  width: 100%;
+  height: clamp(150px, 20vh, 240px);
+  margin-top: clamp(2rem, 4vh, 3rem);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+
+.project-peek img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .more {

@@ -56,26 +56,24 @@ export default function Home() {
       {projects.map((p) => (
         <Depth key={p.slug}>
         <article className="project">
-          <figure>
-            <Link href={`/work/${p.slug}`} className="shot" aria-hidden>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={p.img}
-                alt=""
-                loading="lazy"
-                className={p.slug === 'brand' ? 'cover-left' : undefined}
-              />
-            </Link>
-            <figcaption>
-              {p.num} | {p.caption}
-            </figcaption>
-          </figure>
+          <p className="project-caption">
+            {p.num} | {p.caption}
+          </p>
           <h2>
             <Link href={`/work/${p.slug}`}>{p.title}</Link>
           </h2>
           <p>{p.body}</p>
           <Link className="more" href={`/work/${p.slug}`}>
             See more
+          </Link>
+          <Link
+            href={`/work/${p.slug}`}
+            className="project-peek"
+            aria-hidden
+            tabIndex={-1}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={p.img} alt="" loading="lazy" />
           </Link>
         </article>
         </Depth>
