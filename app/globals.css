@@ -206,6 +206,67 @@ img {
   opacity: 0.55;
 }
 
+/* --- scrollable page frame ------------------------------------------------- */
+
+.pageframe {
+  margin-top: 2.5rem;
+}
+
+.pageframe-window {
+  position: relative;
+  width: 100%;
+  height: min(78vh, 640px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  background: #060a0b;
+  box-shadow: 0 40px 90px -50px rgba(3, 19, 19, 0.5);
+  scrollbar-width: thin;
+}
+
+.pageframe-window img {
+  width: 100%;
+  display: block;
+}
+
+.pageframe-chrome {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(6, 10, 11, 0.72);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(242, 241, 238, 0.08);
+}
+
+.pageframe-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(242, 241, 238, 0.22);
+}
+
+.pageframe-url {
+  margin-left: 0.6rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: rgba(242, 241, 238, 0.5);
+}
+
+.pageframe-hint {
+  margin-top: 0.85rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
 /* --- flipbook -------------------------------------------------------------- */
 
 .flipbook {

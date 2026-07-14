@@ -45,6 +45,23 @@ export default function ThresholdMarketing() {
         </div>
       </dl>
 
+      <div className="pageframe">
+        <div className="pageframe-window">
+          <div className="pageframe-chrome" aria-hidden>
+            <span className="pageframe-dot" />
+            <span className="pageframe-dot" />
+            <span className="pageframe-dot" />
+            <span className="pageframe-url">threshhold.com</span>
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/mkt-fullpage.jpg"
+            alt="The full Threshold homepage, top to bottom"
+          />
+        </div>
+        <p className="pageframe-hint">Scroll the homepage, top to bottom</p>
+      </div>
+
       <section>
         <h2>Strategy is a design input</h2>
         <p>
@@ -59,13 +76,6 @@ export default function ThresholdMarketing() {
           decisions into a copy spec, the copy spec into page structure, and
           shipped the rework as a sequence of small, reviewable commits.
         </p>
-        <figure>
-          <span className="shot">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/mkt-home.jpg" alt="Threshold homepage hero" />
-          </span>
-          <figcaption>Homepage: narrative-first structure</figcaption>
-        </figure>
       </section>
 
       <section>
