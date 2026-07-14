@@ -206,6 +206,33 @@ img {
   opacity: 0.55;
 }
 
+/* --- surface grid (proof of range) ----------------------------------------- */
+
+.surface-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.surface-grid figure {
+  margin: 0;
+}
+
+.surface-grid .shot {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+}
+
+.surface-grid .shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
 /* --- scrollable page frame ------------------------------------------------- */
 
 .pageframe {

@@ -81,29 +81,53 @@ export default function ThresholdMarketing() {
       <section>
         <h2>One voice across every surface</h2>
         <p>
-          Pricing, insights, the demo flow, legal pages, even error states:
-          the same vocabulary everywhere, down to renaming internal concepts
-          for public consumption (“loops” became “agents” when the market
-          said so). Consistency here is a retention feature. Visitors who hit
-          three pages should hear one company.
+          The same voice has to hold up everywhere, not just the homepage.
+          An editorial essay and a legal agreement sit at opposite ends of
+          tone, yet both read as one company: the same serif, the same
+          emerald-black calm, the same plain-spoken sentences. Down to
+          renaming internal concepts for the public (“loops” became “agents”
+          when the market said so), the vocabulary is deliberate and shared.
         </p>
-        <figure>
-          <span className="shot">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/mkt-pricing.jpg" alt="Pricing page" />
-          </span>
-          <figcaption>The consultation-led offer, made legible</figcaption>
-        </figure>
+        <div className="surface-grid">
+          <figure>
+            <span className="shot">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/mkt-insights.jpg" alt="Insights page hero" />
+            </span>
+            <figcaption>Insights: the editorial surface</figcaption>
+          </figure>
+          <figure>
+            <span className="shot">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/mkt-legal.jpg"
+                alt="Master Service Agreement legal page"
+              />
+            </span>
+            <figcaption>Legal: even the MSA keeps the voice</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section>
         <h2>The plumbing counts too</h2>
         <p>
-          A marketing site converts or it doesn’t. I built the contact and
-          demo-booking flow (Cal.com integration), structured metadata and SEO,
-          and the insights section, so the design work is measurable, not just
-          presentable.
+          A marketing site converts or it doesn’t. I built the booking flow on
+          a Cal.com integration, wired structured metadata and SEO, and shipped
+          the insights surface, so the design work is measurable, not just
+          presentable. The booking page carries the brand right up to the
+          moment a prospect picks a time.
         </p>
+        <figure>
+          <span className="shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/mkt-demo.jpg"
+              alt="Consultation booking page with an embedded Cal.com scheduler"
+            />
+          </span>
+          <figcaption>The booking flow: brand held to the last click</figcaption>
+        </figure>
       </section>
 
       <nav className="footer-nav site-footer">
