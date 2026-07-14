@@ -61,7 +61,12 @@ export default function Home() {
           <figure>
             <Link href={`/work/${p.slug}`} className="shot" aria-hidden>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p.img} alt="" loading="lazy" />
+              <img
+                src={p.img}
+                alt=""
+                loading="lazy"
+                className={p.slug === 'brand' ? 'cover-left' : undefined}
+              />
             </Link>
             <figcaption>
               {p.num} | {p.caption}

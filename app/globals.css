@@ -166,6 +166,12 @@ img {
   object-position: top;
 }
 
+/* full-bleed designed covers (e.g. the brand book) anchor left so the
+   title edge is never cropped */
+.project .shot img.cover-left {
+  object-position: left center;
+}
+
 .project figcaption,
 .meta {
   font-family: var(--font-mono), monospace;
