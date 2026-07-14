@@ -9,7 +9,6 @@ const projects = [
     body: 'The core product: alignment, outcomes, learnings, and billing for Threshold’s clients. Designed end-to-end and built the same way, from the design system down to Postgres row-level security.',
     caption: 'Threshold OS / client portal',
     img: '/images/threshold-os-cover.jpg',
-    device: 'macbook',
   },
   {
     slug: 'brand',
@@ -18,7 +17,6 @@ const projects = [
     body: 'The Threshold identity: logo, palette, typography, and application, built end-to-end and documented in a brand book. Page through the real thing, not a screenshot of it.',
     caption: 'Threshold / brand identity',
     img: '/brand/page-01.jpg',
-    device: 'imac',
   },
   {
     slug: 'threshold-marketing',
@@ -27,7 +25,6 @@ const projects = [
     body: 'Threshold’s public site through two GTM pivots: a company-wide audience shift, then a consultation-led offer. Strategy, copy, design, and code shipped as one continuous system.',
     caption: 'threshhold.com / GTM v0.9',
     img: '/images/marketing-cover.jpg',
-    device: 'browser',
   },
   {
     slug: 'assessment',
@@ -36,7 +33,6 @@ const projects = [
     body: 'A three-part self-serve journey (friction mapping, readiness scoring, a first-loop simulation) that turns “book a demo” into an experience worth having on its own.',
     caption: 'Threshold Experiences / assessment journey',
     img: '/images/assessment-cover.jpg',
-    device: 'ipad',
   },
 ]
 
@@ -66,19 +62,9 @@ export default function Home() {
             aria-hidden
             tabIndex={-1}
           >
-            <span className={`device device--${p.device}`}>
-              {p.device === 'browser' && (
-                <span className="device-chrome">
-                  <i />
-                  <i />
-                  <i />
-                  <em>threshhold.com</em>
-                </span>
-              )}
-              <span className="device-screen">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.img} alt="" loading="lazy" />
-              </span>
+            <span className="shot">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={p.img} alt="" loading="lazy" />
             </span>
           </Link>
           <div className="project-text">
