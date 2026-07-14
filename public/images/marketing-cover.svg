@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
-  <rect width="1600" height="1000" fill="#f3f3f6"/>
-  <rect x="0.5" y="0.5" width="1599" height="999" fill="none" stroke="#e2e2e8"/>
-  <line x1="0" y1="0" x2="1600" y2="1000" stroke="#e9e9ee" stroke-width="1"/>
-  <line x1="1600" y1="0" x2="0" y2="1000" stroke="#e9e9ee" stroke-width="1"/>
-  <rect x="600" y="462" width="400" height="76" fill="#f3f3f6"/>
-  <text x="800" y="508" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="22" letter-spacing="2" fill="#8a8894">THRESHHOLD.COM / HOMEPAGE</text>
-</svg>

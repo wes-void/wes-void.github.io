@@ -8,7 +8,7 @@ const projects = [
     title: 'Threshold OS: a client platform for an AI execution firm',
     body: 'The core product: alignment, outcomes, learnings, and billing for Threshold’s clients. Designed end-to-end and built the same way, from the design system down to Postgres row-level security.',
     caption: 'Threshold OS / client portal',
-    img: '/images/threshold-os-cover.svg',
+    img: '/images/threshold-os-cover.jpg',
   },
   {
     slug: 'threshold-marketing',
@@ -16,7 +16,7 @@ const projects = [
     title: 'A go-to-market website built around a narrative, not a feature list',
     body: 'Threshold’s public site through two GTM pivots: a company-wide audience shift, then a consultation-led offer. Strategy, copy, design, and code shipped as one continuous system.',
     caption: 'threshhold.com / GTM v0.9',
-    img: '/images/marketing-cover.svg',
+    img: '/images/marketing-cover.jpg',
   },
   {
     slug: 'assessment',
@@ -24,7 +24,7 @@ const projects = [
     title: 'An interactive assessment that qualifies leads by being genuinely useful',
     body: 'A three-part self-serve journey (friction mapping, readiness scoring, a first-loop simulation) that turns “book a demo” into an experience worth having on its own.',
     caption: 'Threshold Experiences / assessment journey',
-    img: '/images/assessment-cover.svg',
+    img: '/images/assessment-cover.jpg',
   },
 ]
 

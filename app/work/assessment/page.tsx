@@ -54,7 +54,7 @@ export default function Assessment() {
         <figure>
           <span className="shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/assess-hub.svg" alt="Assessment hub" />
+            <img src="/images/assess-hub.jpg" alt="Assessment hub" />
           </span>
           <figcaption>The assessment hub: three tools, one journey</figcaption>
         </figure>
@@ -73,7 +73,7 @@ export default function Assessment() {
           <span className="shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/assess-tool.svg"
+              src="/images/assess-tool.jpg"
               alt="Assessment tool interaction"
             />
           </span>

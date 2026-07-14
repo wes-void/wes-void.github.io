@@ -61,7 +61,7 @@ export default function ThresholdOS() {
         <figure>
           <span className="shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/os-home.svg" alt="Threshold OS client home" />
+            <img src="/images/os-home.jpg" alt="Threshold OS client home" />
           </span>
           <figcaption>Client portal: home</figcaption>
         </figure>
@@ -84,7 +84,7 @@ export default function ThresholdOS() {
           <span className="shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/os-alignment.svg"
+              src="/images/os-alignment.jpg"
               alt="Alignment screen showing the company-wide alignment chain"
             />
           </span>
@@ -107,7 +107,7 @@ export default function ThresholdOS() {
           <span className="shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/os-outcome.svg"
+              src="/images/os-outcome.jpg"
               alt="Current outcome screen with activity timeline"
             />
           </span>

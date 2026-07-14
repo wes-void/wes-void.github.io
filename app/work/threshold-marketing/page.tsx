@@ -62,7 +62,7 @@ export default function ThresholdMarketing() {
         <figure>
           <span className="shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/mkt-home.svg" alt="Threshold homepage hero" />
+            <img src="/images/mkt-home.jpg" alt="Threshold homepage hero" />
           </span>
           <figcaption>Homepage: narrative-first structure</figcaption>
         </figure>
@@ -80,7 +80,7 @@ export default function ThresholdMarketing() {
         <figure>
           <span className="shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/mkt-pricing.svg" alt="Pricing page" />
+            <img src="/images/mkt-pricing.jpg" alt="Pricing page" />
           </span>
           <figcaption>The consultation-led offer, made legible</figcaption>
         </figure>
