@@ -40,10 +40,8 @@ export default function Home() {
   return (
     <main className="page">
       <header className="intro">
-        <h1>
-          Wes Norris is a product designer who ships his own work to
-          production.
-        </h1>
+        <span className="intro-name">Wes Norris</span>
+        <h1>Product design, shipped to production.</h1>
         <p className="sub">
           Lead Product Designer at{' '}
           <a href="https://threshhold.com" target="_blank" rel="noreferrer">

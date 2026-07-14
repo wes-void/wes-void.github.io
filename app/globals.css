@@ -107,6 +107,16 @@ img {
   padding-bottom: var(--block-gap);
 }
 
+.intro-name {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9375rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
+}
+
 .intro h1 {
   font-size: clamp(2.375rem, 6.2vw, 5.5rem);
   font-weight: 500;
@@ -677,6 +687,7 @@ img {
 /* --- reveal on load ---------------------------------------------------------- */
 
 @media (prefers-reduced-motion: no-preference) {
+  .intro-name,
   .intro h1,
   .intro .sub,
   .case h1,
@@ -684,9 +695,13 @@ img {
     animation: rise 0.7s cubic-bezier(0.2, 0.6, 0.2, 1) both;
   }
 
+  .intro h1 {
+    animation-delay: 0.08s;
+  }
+
   .intro .sub,
   .case .lede {
-    animation-delay: 0.12s;
+    animation-delay: 0.18s;
   }
 }
 
