@@ -69,12 +69,12 @@ export default function ThresholdOS() {
           <span className="shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/os-narrative.jpg"
-              alt="Outcome detail narrative: why this outcome exists, what must be true to succeed"
+              src="/images/os-outcome-full.jpg"
+              alt="A full outcome page, top to bottom: status, approval, description, and success criteria"
             />
           </span>
           <figcaption>
-            An outcome reads like a memo: why it exists, what must be true,
+            One outcome, top to bottom: why it exists, what must be true,
             what success looks like
           </figcaption>
         </figure>
@@ -140,6 +140,45 @@ export default function ThresholdOS() {
           <figcaption>
             The other side of the glass: the operator view flags drift when
             the alignment changes underneath live work
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Signing up is a product moment, not paperwork</h2>
+        <p>
+          A client’s first minutes set the tone for the whole engagement, so
+          onboarding got the same design weight as the platform: a guided
+          seven-step flow that moves from password to signed agreement to
+          saved payment without ever feeling like a form. Educational
+          narrative screens explain what happens next, and every legal or
+          financial step states its terms in plain language, like the trial
+          that starts with no charge.
+        </p>
+        <figure>
+          <span className="shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/os-onboarding-welcome.jpg"
+              alt="Onboarding welcome step with progress indicator"
+            />
+          </span>
+          <figcaption>
+            Step three of seven: narrative screens set expectations before
+            any commitment is asked for
+          </figcaption>
+        </figure>
+        <figure>
+          <span className="shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/os-onboarding-agreement.jpg"
+              alt="Agreement signing modal with scroll-to-read gating and a typed signature"
+            />
+          </span>
+          <figcaption>
+            Contract signing in-product: scroll-to-read gating, plain-language
+            terms, and a signature that feels like one
           </figcaption>
         </figure>
       </section>
