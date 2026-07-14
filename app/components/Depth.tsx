@@ -30,7 +30,8 @@ export function Depth({ children }: { children: React.ReactNode }) {
         current = p
         const eased = 1 - Math.pow(1 - p, 3)
         inner.style.transform = `translateZ(${(1 - eased) * -340}px)`
-        inner.style.opacity = String(0.05 + 0.95 * eased)
+        // fully hidden until it enters view, so nothing ghosts under the hero
+        inner.style.opacity = String(eased)
       }
       raf = requestAnimationFrame(tick)
     }
