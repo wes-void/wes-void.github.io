@@ -206,6 +206,79 @@ img {
   opacity: 0.55;
 }
 
+/* --- embedded live assessment (dark Threshold surface on the light page) --- */
+
+.assessment-live {
+  margin-top: 2.5rem;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #060a0b;
+  box-shadow: 0 50px 100px -50px rgba(3, 19, 19, 0.6);
+
+  /* Threshold's own tokens, scoped so the ported journey renders as designed */
+  --color-bg-0: #060a0b;
+  --color-text-0: #eceae6;
+  --color-text-1: rgba(236, 234, 230, 0.82);
+  --color-text-2: rgba(236, 234, 230, 0.62);
+  --color-text-3: rgba(236, 234, 230, 0.48);
+  --color-text-4: rgba(236, 234, 230, 0.36);
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-caudex), Georgia, serif;
+
+  color: var(--color-text-0);
+  font-family: var(--font-body);
+}
+
+/* the light-page text halo must not leak onto the dark embed */
+.assessment-live :is(h1, h2, h3, h4, p, span, div, button, a) {
+  text-shadow: none;
+}
+
+.assessment-live .mkt-eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Tailwind-equivalents the ported journey expects (portfolio has no Tailwind) */
+.assessment-live .animate-spin {
+  animation: a-spin 1s linear infinite;
+}
+.assessment-live .animate-pulse {
+  animation: a-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes a-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes a-pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* the browser-style chrome bar reused from the marketing frame */
+.assessment-live-chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(6, 10, 11, 0.9);
+  border-bottom: 1px solid rgba(236, 234, 230, 0.08);
+}
+
+.assessment-live-hint {
+  margin-top: 0.85rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
 /* --- surface grid (proof of range) ----------------------------------------- */
 
 .surface-grid {

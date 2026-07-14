@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AgentImpactJourney } from '../../components/assessment/journey/AgentImpactJourney'
 
 export const metadata: Metadata = {
   title: 'Assessment journey | Wes Norris',
   description:
-    'A three-part interactive assessment that qualifies leads by being genuinely useful: friction mapping, readiness scoring, and a first-loop simulation.',
+    'A three-part interactive assessment that qualifies leads by being genuinely useful: friction mapping, readiness scoring, and a first-loop simulation. Play the real thing.',
 }
 
 export default function Assessment() {
@@ -19,7 +20,8 @@ export default function Assessment() {
         “Book a demo” asks for trust before offering value. The Threshold
         assessment inverts that: a three-part interactive journey that gives a
         prospect a real diagnosis of their operation, and gives Threshold a
-        qualified, self-selected lead.
+        qualified, self-selected lead. This is the real thing, running here,
+        with the lead-capture gate removed so you can play it end to end.
       </p>
 
       <dl className="facts">
@@ -41,6 +43,19 @@ export default function Assessment() {
         </div>
       </dl>
 
+      <div className="assessment-live">
+        <div className="assessment-live-chrome" aria-hidden>
+          <span className="pageframe-dot" />
+          <span className="pageframe-dot" />
+          <span className="pageframe-dot" />
+          <span className="pageframe-url">threshhold.com/assessment</span>
+        </div>
+        <AgentImpactJourney />
+      </div>
+      <p className="assessment-live-hint">
+        Live and interactive · pick any tool to begin
+      </p>
+
       <section>
         <h2>Three tools, one journey</h2>
         <p>
@@ -51,13 +66,6 @@ export default function Assessment() {
           specific situation. A finale stitches the three into a single
           takeaway the prospect can keep, useful even if they never buy.
         </p>
-        <figure>
-          <span className="shot">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/assess-hub.jpg" alt="Assessment hub" />
-          </span>
-          <figcaption>The assessment hub: three tools, one journey</figcaption>
-        </figure>
       </section>
 
       <section>
@@ -67,18 +75,10 @@ export default function Assessment() {
           prospect’s results also tell the sales conversation where to start.
           The design problem was keeping that honest. The tools had to be
           worth using for their own sake, or the whole premise collapses into
-          a lead form wearing a costume.
+          a lead form wearing a costume. In production, the first set of
+          results sits behind a light capture gate; that gate is lifted in this
+          portfolio build.
         </p>
-        <figure>
-          <span className="shot">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/assess-tool.jpg"
-              alt="Assessment tool interaction"
-            />
-          </span>
-          <figcaption>Readiness: scoring interaction</figcaption>
-        </figure>
       </section>
 
       <section>

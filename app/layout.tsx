@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Instrument_Sans, IBM_Plex_Mono } from 'next/font/google'
+import { Instrument_Sans, IBM_Plex_Mono, Inter, Caudex } from 'next/font/google'
 import './globals.css'
 import { OilSlick } from './components/OilSlick'
 
@@ -13,6 +13,20 @@ const mono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',
+  display: 'swap',
+})
+
+// Scoped to the embedded Threshold assessment so it renders in its real fonts.
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const caudex = Caudex({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-caudex',
   display: 'swap',
 })
 
@@ -38,7 +52,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      className={`${sans.variable} ${mono.variable} ${inter.variable} ${caudex.variable}`}
+    >
       <body>
         <OilSlick />
         {children}
