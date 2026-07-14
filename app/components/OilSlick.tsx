@@ -75,9 +75,9 @@ void main() {
   float chrome = 1.0 - 0.05 * smoothstep(-0.25, 0.45, q.y);
 
   vec3 col = vec3(0.988, 0.988, 0.992) * chrome;
-  col = mix(col, vec3(0.45, 0.92, 1.0), halo * 0.65);
-  col = mix(col, vec3(0.9, 0.62, 0.95), fringe * 0.15);
-  col = mix(col, vec3(0.14, 0.28, 0.97), min(0.94, core * 1.25));
+  col = mix(col, vec3(0.45, 0.92, 1.0), halo * 0.42);
+  col = mix(col, vec3(0.9, 0.62, 0.95), fringe * 0.1);
+  col = mix(col, vec3(0.14, 0.28, 0.97), min(0.55, core * 0.85));
 
   // grain
   col += (hash1(gl_FragCoord.xy + fract(u_time)) - 0.5) * 0.012;
