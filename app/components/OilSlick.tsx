@@ -63,8 +63,8 @@ void main() {
   float h = fbm(p * 2.2 + 2.2 * q + vec2(0.0, drift));
   h = 0.5 + 0.5 * (h * 1.6); // remap signed fbm to ~0..1
 
-  // liquid chrome on white: cobalt cores, cyan halo, magenta fringe
-  float patch = smoothstep(-0.06, 0.26, q.x);
+  // liquid chrome on white: electric-blue cores, cyan halo, trace fringe
+  float patch = smoothstep(0.0, 0.32, q.x);
   float d = abs(h - 0.58);
 
   float core = (1.0 - smoothstep(0.022, 0.038, d)) * patch;
@@ -72,12 +72,12 @@ void main() {
   float fringe = smoothstep(0.058, 0.07, d) * (1.0 - smoothstep(0.078, 0.092, d)) * patch;
 
   // soft gray marbling so the white reads liquid, not flat
-  float chrome = 1.0 - 0.07 * smoothstep(-0.25, 0.45, q.y);
+  float chrome = 1.0 - 0.05 * smoothstep(-0.25, 0.45, q.y);
 
   vec3 col = vec3(0.988, 0.988, 0.992) * chrome;
-  col = mix(col, vec3(0.45, 0.92, 1.0), halo * 0.8);
-  col = mix(col, vec3(0.93, 0.45, 0.95), fringe * 0.5);
-  col = mix(col, vec3(0.07, 0.13, 0.91), min(1.0, core * 1.3));
+  col = mix(col, vec3(0.45, 0.92, 1.0), halo * 0.65);
+  col = mix(col, vec3(0.9, 0.62, 0.95), fringe * 0.15);
+  col = mix(col, vec3(0.14, 0.28, 0.97), min(0.94, core * 1.25));
 
   // grain
   col += (hash1(gl_FragCoord.xy + fract(u_time)) - 0.5) * 0.012;
