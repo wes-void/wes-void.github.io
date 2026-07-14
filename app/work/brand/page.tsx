@@ -23,9 +23,9 @@ export default function Brand() {
       <h1>A brand system, from mark to marketing</h1>
       <p className="lede">
         Before Threshold had a product, it needed an identity: a logo, a
-        palette, a voice in type. I built the whole system and documented it in
-        a brand book so it could hold together as more hands joined. Page
-        through it below.
+        palette, a voice in type. I built the whole system in two forms, a
+        brand book to hand people and a living design system the product is
+        actually built from. Both are below.
       </p>
 
       <dl className="facts">
@@ -67,6 +67,34 @@ export default function Brand() {
           living on a real page. The same palette you’re reading this portfolio
           on is drawn straight from it.
         </p>
+      </section>
+
+      <section>
+        <h2>The living design system</h2>
+        <p>
+          The brand book is the story you hand someone. The design system is
+          the source of truth the product is built from: two typefaces, 98
+          tokens, real components, and the two product surfaces they assemble
+          into. Where the book shows the brand, this shows the machine, colors
+          as tokens, type as a scale, buttons and cards as exported pieces, so
+          design and code stay one system rather than two that drift.
+        </p>
+        <div className="pageframe">
+          <div className="pageframe-window">
+            <div className="pageframe-chrome" aria-hidden>
+              <span className="pageframe-dot" />
+              <span className="pageframe-dot" />
+              <span className="pageframe-dot" />
+              <span className="pageframe-url">threshold · design system</span>
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/brand-designsystem.jpg"
+              alt="The Threshold design system: brand, colors, type, spacing, and components"
+            />
+          </div>
+          <p className="pageframe-hint">Scroll the full design system</p>
+        </div>
       </section>
 
       <nav className="footer-nav site-footer">
