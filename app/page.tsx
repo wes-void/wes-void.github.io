@@ -53,28 +53,32 @@ export default function Home() {
         </p>
       </header>
 
-      {projects.map((p) => (
+      {projects.map((p, idx) => (
         <Depth key={p.slug}>
-        <article className="project">
-          <p className="project-caption">
-            {p.num} | {p.caption}
-          </p>
-          <h2>
-            <Link href={`/work/${p.slug}`}>{p.title}</Link>
-          </h2>
-          <p>{p.body}</p>
-          <Link className="more" href={`/work/${p.slug}`}>
-            See more
-          </Link>
+        <article className={`project${idx % 2 === 1 ? ' project--flip' : ''}`}>
           <Link
             href={`/work/${p.slug}`}
-            className="project-peek"
+            className="project-media"
             aria-hidden
             tabIndex={-1}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.img} alt="" loading="lazy" />
+            <span className="shot">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={p.img} alt="" loading="lazy" />
+            </span>
           </Link>
+          <div className="project-text">
+            <p className="project-caption">
+              {p.num} | {p.caption}
+            </p>
+            <h2>
+              <Link href={`/work/${p.slug}`}>{p.title}</Link>
+            </h2>
+            <p>{p.body}</p>
+            <Link className="project-cta" href={`/work/${p.slug}`}>
+              See more
+            </Link>
+          </div>
         </article>
         </Depth>
       ))}
