@@ -140,6 +140,7 @@ img {
   line-height: 1.55;
   color: var(--ink-soft);
   max-width: var(--measure);
+  text-wrap: pretty;
 }
 
 .intro .sub a {
