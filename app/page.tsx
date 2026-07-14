@@ -79,7 +79,7 @@ export default function Home() {
         </p>
         <div className="links">
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/wesley-norris/"
             target="_blank"
             rel="noreferrer"
           >
