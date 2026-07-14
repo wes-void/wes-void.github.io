@@ -26,11 +26,9 @@ export const metadata: Metadata = {
     title: 'Wes Norris | Product Designer',
     description:
       'Lead Product Designer who ships his own work to production.',
-    images: [{ url: '/banner.jpg', width: 1400, height: 350 }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/banner.jpg'],
   },
 }
 
