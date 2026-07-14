@@ -1,0 +1,341 @@
+/* ---------------------------------------------------------------------------
+   Wes Norris — portfolio
+   One file, one typeface, whitespace does the talking.
+--------------------------------------------------------------------------- */
+
+:root {
+  --paper: #fefefc;
+  --ink: #111110;
+  --ink-soft: #55534e;
+  --hairline: #e8e6e1;
+  --accent: #1440e6; /* used sparingly: links + focus */
+
+  --measure: 34em; /* body paragraph width */
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+  --block-gap: clamp(7rem, 18vh, 13rem);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), 'Helvetica Neue', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  font-size: 1.125rem;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- layout ------------------------------------------------------------- */
+
+.page {
+  padding: 0 var(--gutter);
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+/* --- intro statement ------------------------------------------------------ */
+
+.intro {
+  padding-top: clamp(6rem, 22vh, 12rem);
+  padding-bottom: var(--block-gap);
+}
+
+.intro h1 {
+  font-size: clamp(2.375rem, 6.2vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 18em;
+  text-wrap: balance;
+}
+
+.intro h1 .soft {
+  color: var(--ink-soft);
+}
+
+.intro .sub {
+  margin-top: 2.5rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+.intro .sub a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  transition: border-color 0.15s ease;
+}
+
+.intro .sub a:hover {
+  border-color: var(--ink);
+}
+
+/* --- project blocks -------------------------------------------------------- */
+
+.project {
+  padding-bottom: var(--block-gap);
+}
+
+.project figure {
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+}
+
+.project .shot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #f1efe9;
+  border: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project .shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project figcaption,
+.meta {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  margin-top: 0.875rem;
+  text-transform: uppercase;
+}
+
+.project h2 {
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 14em;
+}
+
+.project p {
+  margin-top: 1.5rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+.more {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-size: 1.0625rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.1em;
+  transition: opacity 0.15s ease;
+}
+
+.more:hover {
+  opacity: 0.55;
+}
+
+/* --- footer ---------------------------------------------------------------- */
+
+.site-footer {
+  padding-bottom: clamp(4rem, 10vh, 7rem);
+}
+
+.site-footer .contact {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.site-footer .contact a {
+  border-bottom: 2px solid var(--hairline);
+  transition: border-color 0.15s ease;
+}
+
+.site-footer .contact a:hover {
+  border-color: var(--ink);
+}
+
+.site-footer .links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.site-footer .links a:hover {
+  color: var(--ink);
+}
+
+/* --- case study pages ------------------------------------------------------ */
+
+.case {
+  padding-top: clamp(5rem, 16vh, 9rem);
+}
+
+.case .back {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.case .back:hover {
+  color: var(--ink);
+}
+
+.case h1 {
+  margin-top: 3rem;
+  font-size: clamp(2.375rem, 5.5vw, 5rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 15em;
+}
+
+.case .lede {
+  margin-top: 2rem;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+.case .facts {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1.5rem;
+  max-width: 56rem;
+}
+
+.case .facts dt {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.case .facts dd {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.case section {
+  margin-top: var(--block-gap);
+}
+
+.case section h2 {
+  font-size: clamp(1.625rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  max-width: 18em;
+}
+
+.case section p {
+  margin-top: 1.25rem;
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+.case section p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.case figure {
+  margin-top: 2.5rem;
+}
+
+.case .shot {
+  width: 100%;
+  background: #f1efe9;
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+}
+
+.case .shot img {
+  width: 100%;
+  display: block;
+}
+
+.case figcaption {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  margin-top: 0.875rem;
+}
+
+.case .footer-nav {
+  margin-top: var(--block-gap);
+}
+
+/* --- reveal on load ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .intro h1,
+  .intro .sub,
+  .case h1,
+  .case .lede {
+    animation: rise 0.7s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+  }
+
+  .intro .sub,
+  .case .lede {
+    animation-delay: 0.12s;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
