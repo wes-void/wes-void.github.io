@@ -257,7 +257,34 @@ USING (
         </figure>
       </section>
 
-      {/* 7 — the close */}
+      {/* 7 — the pivot: reprices the outcome-focused framing above */}
+      <section>
+        <h2>The story changed, the system didn’t</h2>
+        <p>
+          This platform was built to do one thing for a client: make the
+          outcomes Threshold pursued on their behalf visible, and let them
+          approve and pay for those outcomes one at a time. That was the
+          business, and the object model above is shaped to it.
+        </p>
+        <p>
+          Running it taught us something the plan didn’t predict. To reach any
+          outcome, we first built a loop: a repeatable agentic process that
+          produced the result. New customers wanted the loop more than a
+          finished outcome sold to them piece by piece. The value was in the
+          machine, not in its output metered out. So the go-to-market moved,
+          from charging for outcomes to building and handing over the loops
+          themselves.
+        </p>
+        <p>
+          The part worth noticing, as the person who designed the model, is how
+          little of it had to move. The vocabulary was already there: a{' '}
+          <em>run</em> is an atomic execution attempt, which is another way of
+          saying a loop. The chain still holds. What changed was where the price
+          sat, not the shape underneath it.
+        </p>
+      </section>
+
+      {/* 8 — the close */}
       <section>
         <h2>Shipped by the designer</h2>
         <p>
