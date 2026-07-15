@@ -31,8 +31,7 @@ const caudex = Caudex({
 })
 
 export const metadata: Metadata = {
-  // TODO: update to the real deployment URL after `npx vercel` assigns it
-  metadataBase: new URL('https://wes-portfolio.vercel.app'),
+  metadataBase: new URL('https://wes-void.github.io'),
   title: 'Wes Norris | Product Designer',
   description:
     'Wes Norris is a Lead Product Designer who ships to production. Design systems, product UX, and the code that delivers them.',
