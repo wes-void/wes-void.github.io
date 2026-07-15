@@ -205,6 +205,32 @@ img {
   display: block;
 }
 
+/* device-framed mockups: the device is already the frame, so drop the card
+   chrome and show the whole device at its natural proportions */
+.project-media--device .shot {
+  aspect-ratio: auto;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.project-media--device .shot img {
+  height: auto;
+  object-fit: contain;
+  /* lift the floating device off the light page */
+  filter: drop-shadow(0 38px 65px rgba(3, 19, 19, 0.28));
+}
+/* portrait phone: keep it from towering over the row it sits in */
+.project-media--portrait {
+  justify-content: center;
+}
+.project-media--portrait .shot {
+  width: auto;
+  max-width: min(300px, 66%);
+  margin-inline: auto;
+}
+
 .project-caption,
 .meta {
   font-family: var(--font-mono), monospace;

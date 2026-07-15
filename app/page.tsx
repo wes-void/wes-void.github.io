@@ -1,14 +1,28 @@
 import Link from 'next/link'
 import { Depth } from './components/Depth'
 
-const projects = [
+type Project = {
+  slug: string
+  num: string
+  title: string
+  body: string
+  caption: string
+  img: string
+  // device-framed mockup (transparent PNG) vs. flat cover screenshot
+  mockup?: boolean
+  // portrait device (phone): constrain so it doesn't tower over its row
+  portrait?: boolean
+}
+
+const projects: Project[] = [
   {
     slug: 'threshold-os',
     num: '01',
     title: 'Threshold OS: a client platform for an AI execution firm',
     body: 'The core product: alignment, outcomes, learnings, and billing for Threshold’s clients. Designed end-to-end and built the same way, from the design system down to the database it runs on.',
     caption: 'Threshold OS / client portal',
-    img: '/images/threshold-os-cover.jpg',
+    img: '/images/os-mockup.png',
+    mockup: true,
   },
   {
     slug: 'brand',
@@ -24,7 +38,8 @@ const projects = [
     title: 'A go-to-market website built around a narrative, not a feature list',
     body: 'Threshold’s public site through two GTM pivots: a company-wide audience shift, then a consultation-led offer. Strategy, copy, design, and code shipped as one continuous system.',
     caption: 'threshhold.com / GTM v0.9',
-    img: '/images/marketing-cover.jpg',
+    img: '/images/marketing-mockup.png',
+    mockup: true,
   },
   {
     slug: 'assessment',
@@ -32,7 +47,9 @@ const projects = [
     title: 'An interactive assessment that qualifies leads by being genuinely useful',
     body: 'A three-part self-serve journey (friction mapping, readiness scoring, a first-loop simulation) that turns “book a demo” into an experience worth having on its own.',
     caption: 'Threshold Experiences / assessment journey',
-    img: '/images/assessment-cover.jpg',
+    img: '/images/assessment-mockup.png',
+    mockup: true,
+    portrait: true,
   },
 ]
 
@@ -62,7 +79,9 @@ export default function Home() {
         <article className={`project${idx % 2 === 1 ? ' project--flip' : ''}`}>
           <Link
             href={`/work/${p.slug}`}
-            className="project-media"
+            className={`project-media${p.mockup ? ' project-media--device' : ''}${
+              p.portrait ? ' project-media--portrait' : ''
+            }`}
             aria-hidden
             tabIndex={-1}
           >
