@@ -15,7 +15,16 @@ import { useEffect, useRef } from 'react'
  * live system; a natural overscroll at its top or bottom hands scroll back to
  * the page.
  */
-export function LiveEmbed({ src, title }: { src: string; title: string }) {
+export function LiveEmbed({
+  src,
+  title,
+  background,
+}: {
+  src: string
+  title: string
+  /** loading canvas color, matched to the embedded app so there's no flash */
+  background?: string
+}) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const frameRef = useRef<HTMLIFrameElement>(null)
 
@@ -53,7 +62,13 @@ export function LiveEmbed({ src, title }: { src: string; title: string }) {
 
   return (
     <div className="ds-live" ref={wrapRef}>
-      <iframe ref={frameRef} src={src} title={title} loading="lazy" />
+      <iframe
+        ref={frameRef}
+        src={src}
+        title={title}
+        loading="lazy"
+        style={background ? { background } : undefined}
+      />
     </div>
   )
 }
