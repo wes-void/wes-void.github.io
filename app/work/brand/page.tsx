@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FlipBook } from '../../components/FlipBook'
+import { LiveEmbed } from '../../components/LiveEmbed'
 
 export const metadata: Metadata = {
   title: 'Brand identity system | Wes Norris',
@@ -85,13 +86,10 @@ export default function Brand() {
           states, and the hover, focus, and motion the product actually ships.
           Scroll it, hover it, resize the window.
         </p>
-        <div className="ds-live">
-          <iframe
-            src="/design-system.html"
-            title="The Threshold design system, running live"
-            loading="lazy"
-          />
-        </div>
+        <LiveEmbed
+          src="/design-system.html"
+          title="The Threshold design system, running live"
+        />
         <p className="ds-live-hint">
           Live and interactive · best on a wide screen
         </p>

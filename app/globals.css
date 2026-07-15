@@ -451,7 +451,11 @@ img {
 .ds-live iframe {
   display: block;
   width: 100%;
-  height: min(900px, 88vh);
+  /* full viewport height: "fully in view" means it fills the screen, and the
+     embed only takes over scrolling once its top is pinned there (see
+     LiveEmbed) */
+  height: 100vh;
+  height: 100svh;
   border: 0;
   border-top: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
