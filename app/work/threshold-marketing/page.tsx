@@ -20,9 +20,9 @@ export default function ThresholdMarketing() {
         Threshold’s public site is a small, deliberate surface with one job:
         turn curiosity into a qualified conversation. It’s less screen than the
         product or the design system, and that restraint is the point. So
-        instead of narrating it section by section, here it is, live and
-        clickable. What’s worth telling is the strategy behind it, and where it
-        hands you next.
+        instead of narrating it section by section, here it is, captured as a
+        snapshot you can explore in place. What’s worth telling is the strategy
+        behind it, and where it hands you next.
       </p>
 
       <dl className="facts">
@@ -54,7 +54,10 @@ export default function ThresholdMarketing() {
         background="#060a0b"
       />
       <p className="ds-live-hint">
-        Live and clickable · click through the funnel
+        A contained snapshot, explore it in place ·{' '}
+        <a href="https://threshhold.com" target="_blank" rel="noreferrer">
+          view the live site ↗
+        </a>
       </p>
 
       <section>
