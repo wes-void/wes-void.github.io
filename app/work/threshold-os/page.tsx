@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ObjectiveAnatomy } from '../../components/ObjectiveAnatomy'
 import { SurfaceAccordion } from '../../components/SurfaceAccordion'
+import { JourneyGallery } from '../../components/JourneyGallery'
 
 export const metadata: Metadata = {
   title: 'Threshold OS | Wes Norris',
@@ -138,39 +139,12 @@ export default function ThresholdOS() {
         <h2>Onboarding is the product’s first sentence</h2>
         <p>
           A client’s first minutes set the tone for the whole engagement, so
-          onboarding got the same weight as the platform: one guided wizard of
-          ten steps that moves from password to signed agreement to saved
-          payment to approving the first outcome, without ever feeling like a
-          form. Here is the journey, beat by beat.
+          onboarding got the same weight as the platform: one guided wizard that
+          moves from password to signed agreement to saved payment to approving
+          the first outcome, without ever feeling like a form. Every page of it
+          is below, in order.
         </p>
-        <ol className="journey">
-          <li><span className="journey-n">01</span><span className="journey-b"><strong>Password</strong> Reassuring, reversible: “change it anytime in Settings.”</span></li>
-          <li><span className="journey-n">02</span><span className="journey-b"><strong>Profile</strong> Name required, photo optional and deferrable.</span></li>
-          <li><span className="journey-n">03</span><span className="journey-b"><strong>Welcome</strong> The first outcome is already prepared; they’ll review before anything begins.</span></li>
-          <li><span className="journey-n">04</span><span className="journey-b"><strong>Focus</strong> Sells hands-off: “you’ll see real progress as it happens.”</span></li>
-          <li><span className="journey-n">05</span><span className="journey-b"><strong>Trial</strong> Pricing stated plainly. “If you decide not to continue, you won’t be charged.”</span></li>
-          <li><span className="journey-n">06</span><span className="journey-b"><strong>Agreement</strong> Scroll-to-read gating, plain-language terms, a typed signature that feels like one.</span></li>
-          <li><span className="journey-n">07</span><span className="journey-b"><strong>Payment</strong> Card saved, not charged. “Payment details never touch our servers.”</span></li>
-          <li><span className="journey-n">08</span><span className="journey-b"><strong>Approve the alignment</strong> Before execution, align on the company direction everything supports.</span></li>
-          <li><span className="journey-n">09</span><span className="journey-b"><strong>Approve the objective</strong> Confirm the measurable target the work is tied to.</span></li>
-          <li><span className="journey-n">10</span><span className="journey-b"><strong>Approve the outcome</strong> Say go. Then a one-shot welcome moment: “your trial outcome starts now.”</span></li>
-        </ol>
-        <div className="surface-grid">
-          <figure>
-            <span className="shot">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/os-onboarding-welcome.jpg" alt="An onboarding narrative step with progress indicator" />
-            </span>
-            <figcaption>Narrative steps set expectations before any commitment is asked for</figcaption>
-          </figure>
-          <figure>
-            <span className="shot">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/os-onboarding-agreement.jpg" alt="The agreement signing modal with scroll-to-read gating and a typed signature" />
-            </span>
-            <figcaption>Contract signing in-product: scroll-to-read gating, plain terms, a real signature</figcaption>
-          </figure>
-        </div>
+        <JourneyGallery />
       </section>
 
       {/* 5 — state machine */}

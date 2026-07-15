@@ -1371,3 +1371,158 @@ img {
   background: var(--ink);
   border-color: var(--ink);
 }
+
+/* --- OS case study: onboarding journey gallery ---------------------------- */
+
+.journey-gallery {
+  margin-top: 2rem;
+  max-width: 60rem;
+}
+
+.jg-stage {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background: #060a0b;
+  box-shadow: 0 40px 90px -55px rgba(3, 19, 19, 0.5);
+}
+
+.jg-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  animation: jg-fade 0.45s ease both;
+}
+
+@keyframes jg-fade {
+  from {
+    opacity: 0;
+    transform: scale(1.012);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.jg-bar {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.jg-nav {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.jg-nav:hover:not(:disabled) {
+  border-color: var(--ink);
+}
+
+.jg-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.jg-caption {
+  flex: 1;
+  margin: 0;
+  max-width: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.8rem;
+}
+
+.jg-cap-n {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.jg-cap-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.jg-cap-text {
+  flex-basis: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.jg-rail {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+  scrollbar-width: thin;
+}
+
+.jg-step {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  align-items: flex-start;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.jg-step:hover {
+  border-color: var(--ink-soft);
+}
+
+.jg-step.is-active {
+  border-color: var(--ink);
+  background: var(--ink);
+}
+
+.jg-step-n {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.jg-step-t {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.jg-step.is-active .jg-step-n {
+  color: rgba(252, 252, 253, 0.6);
+}
+
+.jg-step.is-active .jg-step-t {
+  color: var(--paper);
+}
