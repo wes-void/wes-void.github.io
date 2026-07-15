@@ -5,7 +5,7 @@ import { join } from 'path'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 export const alt =
-  'Wes Norris is a product designer who ships his own work to production.'
+  'Product design, shipped to production. Wes Norris, Lead Product Designer.'
 
 export default async function OpenGraphImage() {
   const font = await readFile(
@@ -32,28 +32,42 @@ export default async function OpenGraphImage() {
       >
         <div
           style={{
-            fontSize: 64,
+            fontSize: 24,
             fontFamily: 'Instrument Sans',
             fontWeight: 500,
-            lineHeight: 1.12,
+            letterSpacing: '0.16em',
+            color: '#5c5a66',
+            marginBottom: 30,
+          }}
+        >
+          WES NORRIS
+        </div>
+        <div
+          style={{
+            fontSize: 74,
+            fontFamily: 'Instrument Sans',
+            fontWeight: 500,
+            lineHeight: 1.08,
             letterSpacing: '-0.02em',
             color: '#101014',
             maxWidth: 980,
           }}
         >
-          Wes Norris is a product designer who ships his own work to
-          production.
+          Product design, shipped to production.
         </div>
         <div
           style={{
-            marginTop: 40,
-            fontSize: 26,
+            marginTop: 34,
+            fontSize: 27,
             fontFamily: 'Instrument Sans',
             fontWeight: 500,
+            lineHeight: 1.4,
             color: '#5c5a66',
+            maxWidth: 940,
           }}
         >
-          Product design, design systems, and the code that delivers them.
+          Lead Product Designer at Threshold. The design system, client
+          platform, and marketing site, built by one pair of hands.
         </div>
       </div>
     ),

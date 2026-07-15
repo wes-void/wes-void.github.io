@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://wes-void.github.io'),
   title: 'Wes Norris | Product Designer',
   description:
-    'Wes Norris is a Lead Product Designer who ships to production. Design systems, product UX, and the code that delivers them.',
+    'Product design, shipped to production. Wes Norris is a Lead Product Designer at Threshold, where the design system, client platform, and marketing site were designed and built by the same pair of hands.',
   openGraph: {
-    title: 'Wes Norris | Product Designer',
+    title: 'Wes Norris | Product design, shipped to production.',
     description:
-      'Lead Product Designer who ships his own work to production.',
+      'Lead Product Designer at Threshold. The design system, client platform, and marketing site, built by one pair of hands.',
   },
   twitter: {
     card: 'summary_large_image',
