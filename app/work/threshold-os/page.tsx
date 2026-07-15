@@ -71,7 +71,7 @@ export default function ThresholdOS() {
             <span className="surface-label">Operator</span>
             <span className="shot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/os-drift.jpg" alt="An operator's dashboard, flagging alignment drift for review" />
+              <img src="/images/os-operator-drive.jpg" alt="An operator's drive detail, mid-lifecycle" />
             </span>
             <p>
               The people doing the execution: authoring objectives, running
@@ -83,7 +83,7 @@ export default function ThresholdOS() {
             <span className="surface-label">Admin</span>
             <span className="shot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/os-admin-dashboard.jpg" alt="The admin control plane" />
+              <img src="/images/os-admin-run-approvals.jpg" alt="The admin run-approval queue: pricing a completed run before the client sees it" />
             </span>
             <p>
               The firm’s control plane, and the only cross-tenant surface:
@@ -235,23 +235,23 @@ export default function ThresholdOS() {
             not merely discouraged.
           </p>
         </div>
-        <div className="chain-diagram chain-diagram--stepper" aria-hidden>
-          <span className="chain-node">draft</span>
-          <span className="chain-arrow">→</span>
-          <span className="chain-node">pending_review</span>
-          <span className="chain-arrow">→</span>
-          <span className="chain-node">approved</span>
-          <span className="chain-arrow">→</span>
-          <span className="chain-node chain-node--on">started</span>
-          <span className="chain-arrow">→</span>
-          <span className="chain-node">closed</span>
-        </div>
         <p>
           A drive walks that lifecycle, and only the middle of it, live work,
           can ever carry a “needs review” flag. When the company alignment
           changes underneath a running drive, the affected objectives are
           flagged for exactly that, and nothing outside those states can be.
         </p>
+        <figure>
+          <span className="shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/os-drift.jpg" alt="An operator dashboard flagging objectives that need review after the alignment changed" />
+          </span>
+          <figcaption>
+            The rule in the product: when the alignment changes underneath live
+            work, the affected objectives are flagged “needs review”, exactly the
+            state the constraint allows
+          </figcaption>
+        </figure>
       </section>
 
       {/* 6 — multi-tenant enforcement */}
@@ -265,6 +265,16 @@ export default function ThresholdOS() {
           and clients are additionally never shown work that’s still an internal
           draft.
         </p>
+        <figure>
+          <span className="shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/os-admin-companies.jpg" alt="The admin company list: many separate tenant companies in one system" />
+          </span>
+          <figcaption>
+            Many companies, one system. Every table the policies below guard is
+            scoped to one of them.
+          </figcaption>
+        </figure>
         <div className="codeblock">
           <span className="codeblock-file">supabase/migrations/…state_rework.sql</span>
           <pre><code>{`CREATE POLICY "clients_view_drives" ON drives FOR SELECT TO authenticated
