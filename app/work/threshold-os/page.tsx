@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ObjectiveAnatomy } from '../../components/ObjectiveAnatomy'
+import { SurfaceAccordion } from '../../components/SurfaceAccordion'
 
 export const metadata: Metadata = {
   title: 'Threshold OS | Wes Norris',
@@ -54,45 +55,7 @@ export default function ThresholdOS() {
           depending on who is looking, because the firm, its operators, and its
           clients need to see three different things.
         </p>
-        <div className="surface-trio">
-          <figure className="surface">
-            <span className="surface-label">Client</span>
-            <span className="shot">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/os-home.jpg" alt="The client portal home" />
-            </span>
-            <p>
-              Read-mostly. Clients don’t operate the work, they{' '}
-              <strong>approve</strong> it and watch it. The job here is
-              confidence, not task efficiency.
-            </p>
-          </figure>
-          <figure className="surface">
-            <span className="surface-label">Operator</span>
-            <span className="shot">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/os-operator-drive.jpg" alt="An operator's drive detail, mid-lifecycle" />
-            </span>
-            <p>
-              The people doing the execution: authoring objectives, running
-              drives through their lifecycle, declaring outcomes, resolving
-              drift. The <strong>doing</strong> tier.
-            </p>
-          </figure>
-          <figure className="surface">
-            <span className="surface-label">Admin</span>
-            <span className="shot">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/os-admin-run-approvals.jpg" alt="The admin run-approval queue: pricing a completed run before the client sees it" />
-            </span>
-            <p>
-              The firm’s control plane, and the only cross-tenant surface:
-              pricing approval before a client ever sees a result, tenant and
-              billing administration, monitoring. The <strong>oversight</strong>{' '}
-              tier.
-            </p>
-          </figure>
-        </div>
+        <SurfaceAccordion />
         <p>
           Three surfaces, one system. Designing that is a product problem
           (what each role should and shouldn’t see) and an architecture problem

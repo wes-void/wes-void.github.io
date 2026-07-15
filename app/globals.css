@@ -865,64 +865,179 @@ img {
   }
 }
 
-/* --- OS case study: three-surface trio ------------------------------------ */
+/* --- OS case study: three-surface expanding accordion --------------------- */
 
-.surface-trio {
+.surface-acc {
   margin-top: 2.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.25rem, 3vw, 2rem);
+  display: flex;
+  gap: 0.5rem;
+  height: min(62vh, 560px);
+}
+
+.surface-panel {
+  position: relative;
+  flex: 0 1 74px;
+  min-width: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b1416 top left / cover no-repeat;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: flex-grow 0.6s cubic-bezier(0.4, 0.05, 0.2, 1),
+    box-shadow 0.4s ease;
+}
+
+.surface-panel.is-active {
+  flex-grow: 12;
+  box-shadow: 0 40px 90px -55px rgba(3, 19, 19, 0.55);
+}
+
+.surface-panel:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* legibility scrim: dim when collapsed, bottom gradient when active */
+.surface-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 10, 11, 0.68);
+  transition: background 0.5s ease;
+  pointer-events: none;
+}
+
+.surface-panel.is-active::after {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 10, 11, 0.12) 0%,
+    rgba(6, 10, 11, 0) 32%,
+    rgba(6, 10, 11, 0) 46%,
+    rgba(6, 10, 11, 0.6) 72%,
+    rgba(6, 10, 11, 0.95) 100%
+  );
+}
+
+/* collapsed: vertical mono spine */
+.surface-spine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.15rem 0;
+  transition: opacity 0.3s ease;
+}
+
+.surface-panel.is-active .surface-spine {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.surface-idx {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  color: rgba(236, 234, 230, 0.5);
+  text-shadow: none;
+}
+
+.surface-name {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #eceae6;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-shadow: none;
+}
+
+/* active: caption over the scrim */
+.surface-reveal {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: clamp(1.35rem, 2.5vw, 2.1rem);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.14s, transform 0.4s ease 0.14s;
+}
+
+.surface-panel.is-active .surface-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.surface-cap-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.surface-cap-idx {
+  color: var(--accent);
+  /* accent reads low-contrast at full cobalt on dark; lift it */
+  filter: brightness(1.7);
+}
+
+.surface-cap-text {
+  max-width: 34em;
+  font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+  line-height: 1.55;
+  color: rgba(236, 234, 230, 0.86);
+  text-shadow: none;
 }
 
 @media (max-width: 820px) {
-  .surface-trio {
-    grid-template-columns: 1fr;
+  .surface-acc {
+    flex-direction: column;
+    height: auto;
   }
-}
 
-.surface {
-  margin: 0;
-}
+  .surface-panel {
+    flex: none;
+    height: 68px;
+    transition: height 0.55s cubic-bezier(0.4, 0.05, 0.2, 1),
+      box-shadow 0.4s ease;
+  }
 
-.surface-label {
-  display: inline-block;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-}
+  .surface-panel.is-active {
+    flex-grow: 0;
+    height: min(58vh, 400px);
+  }
 
-.surface .shot {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border: 1px solid var(--hairline);
-  border-radius: 10px;
-  background: rgba(16, 16, 20, 0.03);
-}
+  /* spine goes horizontal on mobile */
+  .surface-spine {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.9rem;
+    padding: 0 1.2rem;
+  }
 
-.surface .shot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-}
-
-.surface p {
-  margin-top: 1rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--ink-soft);
-  max-width: none;
-}
-
-.surface p strong {
-  color: var(--ink);
-  font-weight: 500;
+  .surface-name {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
 }
 
 /* --- OS case study: object-model chain diagram ---------------------------- */
