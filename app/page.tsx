@@ -121,7 +121,9 @@ export default function Home() {
           >
             LinkedIn
           </a>
-          <a href="/wes-norris-resume.pdf">Resume</a>
+          <a href="/wes-norris-resume.pdf" target="_blank" rel="noreferrer">
+            Resume
+          </a>
         </div>
       </footer>
     </main>

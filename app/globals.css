@@ -204,6 +204,11 @@ img {
   object-position: top;
   display: block;
 }
+/* flat cover (brand book): its title sits on the left, so left-align the
+   crop instead of centering it, which was clipping the wordmark */
+.project-media:not(.project-media--device) .shot img {
+  object-position: left center;
+}
 
 /* device-framed mockups: the device is already the frame, so drop the card
    chrome and show the whole device at its natural proportions */
@@ -281,12 +286,12 @@ img {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
-  .project-text,
-  .project--flip .project-text {
-    order: 1;
-  }
   .project-media,
   .project--flip .project-media {
+    order: 1;
+  }
+  .project-text,
+  .project--flip .project-text {
     order: 2;
   }
 }
@@ -339,6 +344,9 @@ img {
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  /* default muted-light so eyebrows without an inline color (the finale recap
+     cards) stay legible; teal instances override this inline */
+  color: var(--color-text-3);
 }
 
 /* Tailwind-equivalents the ported journey expects (portfolio has no Tailwind) */
