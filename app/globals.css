@@ -864,3 +864,395 @@ img {
     transform: none;
   }
 }
+
+/* --- OS case study: three-surface trio ------------------------------------ */
+
+.surface-trio {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (max-width: 820px) {
+  .surface-trio {
+    grid-template-columns: 1fr;
+  }
+}
+
+.surface {
+  margin: 0;
+}
+
+.surface-label {
+  display: inline-block;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.surface .shot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  background: rgba(16, 16, 20, 0.03);
+}
+
+.surface .shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.surface p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: none;
+}
+
+.surface p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* --- OS case study: object-model chain diagram ---------------------------- */
+
+.chain-diagram {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chain-node {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: rgba(16, 16, 20, 0.02);
+  white-space: nowrap;
+}
+
+.chain-arrow {
+  color: var(--ink-soft);
+}
+
+/* --- OS case study: dark code cards (intent in the build) ----------------- */
+
+.codeblock {
+  margin-top: 2.5rem;
+  max-width: 56rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: #0b1416;
+  box-shadow: 0 30px 70px -50px rgba(3, 19, 19, 0.5);
+}
+
+.codeblock-file {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(236, 234, 230, 0.5);
+  padding: 0.7rem 1.1rem;
+  border-bottom: 1px solid rgba(236, 234, 230, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.codeblock pre {
+  margin: 0;
+  padding: 1.1rem 1.2rem;
+  overflow-x: auto;
+}
+
+.codeblock code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #dfe7e6;
+  white-space: pre;
+  text-shadow: none !important;
+}
+
+.codeblock-intent {
+  margin: 0;
+  padding: 1rem 1.2rem 1.15rem;
+  border-top: 1px solid rgba(236, 234, 230, 0.08);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(236, 234, 230, 0.7);
+  max-width: none;
+  text-shadow: none !important;
+}
+
+.codeblock-intent em {
+  color: #9fe0d8;
+  font-style: normal;
+}
+
+/* --- OS case study: interactive "anatomy of an objective" ----------------- */
+
+.obj-anatomy-lead {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.obj-anatomy {
+  margin-top: 1.25rem;
+  max-width: 56rem;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0b1416;
+  box-shadow: 0 40px 90px -50px rgba(3, 19, 19, 0.55);
+}
+
+.obj-anatomy :is(p, span, code, label, em) {
+  text-shadow: none !important;
+}
+
+.obj-anatomy-stage {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 1px solid rgba(236, 234, 230, 0.08);
+}
+
+.obj-anatomy-eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(236, 234, 230, 0.45);
+}
+
+.obj-anatomy-sentence {
+  margin-top: 1rem;
+  font-family: var(--font-caudex), Georgia, serif;
+  font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+  line-height: 1.5;
+  color: #eceae6;
+}
+
+.obj-chip {
+  font: inherit;
+  color: #7fe3d6;
+  background: rgba(127, 227, 214, 0.08);
+  border: none;
+  border-bottom: 1px solid rgba(127, 227, 214, 0.45);
+  border-radius: 4px 4px 0 0;
+  padding: 0 0.25rem;
+  margin: 0 0.05rem;
+  text-align: center;
+  outline: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.obj-chip:focus {
+  background: rgba(127, 227, 214, 0.18);
+  border-bottom-color: #7fe3d6;
+}
+
+.obj-chip::placeholder {
+  color: rgba(236, 234, 230, 0.3);
+}
+
+.obj-anatomy-hint {
+  margin-top: 1.1rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: rgba(236, 234, 230, 0.4);
+}
+
+.obj-anatomy-map {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(236, 234, 230, 0.08);
+}
+
+.obj-map-head,
+.obj-map-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1rem;
+}
+
+.obj-map-head {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  color: rgba(236, 234, 230, 0.4);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(236, 234, 230, 0.08);
+}
+
+.obj-map-row {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(236, 234, 230, 0.05);
+  align-items: baseline;
+}
+
+.obj-map-slot {
+  color: #7fe3d6;
+  word-break: break-word;
+}
+
+.obj-map-col code {
+  color: #eceae6;
+}
+
+.obj-map-col em {
+  display: block;
+  font-style: normal;
+  color: rgba(236, 234, 230, 0.42);
+  font-size: 0.72rem;
+  margin-top: 0.15rem;
+}
+
+.obj-map-row--statement .obj-map-slot {
+  color: rgba(236, 234, 230, 0.7);
+}
+
+.obj-serves {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.obj-serves label {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(236, 234, 230, 0.7);
+}
+
+.obj-serves label span {
+  color: rgba(236, 234, 230, 0.4);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.obj-serves-field {
+  margin-top: 0.7rem;
+  width: 100%;
+  background: rgba(236, 234, 230, 0.04);
+  border: 1px solid rgba(236, 234, 230, 0.12);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  color: #eceae6;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+}
+
+.obj-serves-field:focus {
+  border-color: rgba(127, 227, 214, 0.5);
+}
+
+.obj-serves-field::placeholder {
+  color: rgba(236, 234, 230, 0.3);
+}
+
+.obj-gate {
+  margin-top: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.74rem;
+  color: rgba(236, 234, 230, 0.6);
+}
+
+.obj-gate code {
+  color: rgba(236, 234, 230, 0.85);
+}
+
+.obj-gate-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.obj-gate.is-locked .obj-gate-dot {
+  background: #d8a24a;
+  box-shadow: 0 0 0 3px rgba(216, 162, 74, 0.15);
+}
+
+.obj-gate.is-ready .obj-gate-dot {
+  background: #22a06b;
+  box-shadow: 0 0 0 3px rgba(34, 160, 107, 0.18);
+}
+
+/* --- OS case study: onboarding journey ------------------------------------ */
+
+.journey {
+  margin-top: 2rem;
+  max-width: 52rem;
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+
+.journey li {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--hairline);
+  align-items: baseline;
+}
+
+.journey li:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.journey-n {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  flex: none;
+  width: 2ch;
+}
+
+.journey-b {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.journey-b strong {
+  color: var(--ink);
+  font-weight: 500;
+  margin-right: 0.4rem;
+}
+
+/* highlighted node in a lifecycle stepper (reuses chain-diagram) */
+.chain-diagram--stepper {
+  font-size: 0.9em;
+}
+
+.chain-node--on {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+}
