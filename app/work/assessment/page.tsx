@@ -39,7 +39,7 @@ export default function Assessment() {
         </div>
         <div>
           <dt>Status</dt>
-          <dd>Shipped across 14 pull requests</dd>
+          <dd>In production, shipped with tests</dd>
         </div>
       </dl>
 
@@ -84,10 +84,11 @@ export default function Assessment() {
       <section>
         <h2>Shipped like product, not campaign</h2>
         <p>
-          The journey shipped as fourteen scoped pull requests with tests,
-          because it lives inside the product codebase and writes to the same
-          database the business runs on. Marketing surfaces deserve production
-          discipline. They’re the first product a customer ever touches.
+          The journey shipped with the same discipline as the product: tested,
+          reviewed, and merged in small scoped steps, because it lives inside
+          the product codebase and writes to the same database the business
+          runs on. Marketing surfaces deserve production discipline. They’re
+          the first product a customer ever touches.
         </p>
       </section>
 

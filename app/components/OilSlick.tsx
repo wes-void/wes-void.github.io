@@ -74,10 +74,16 @@ void main() {
   // soft gray marbling so the white reads liquid, not flat
   float chrome = 1.0 - 0.05 * smoothstep(-0.25, 0.45, q.y);
 
+  // Calm the vibrant veins below the hero, where small mono captions and
+  // gray body text live. Full vibrance at the top of the page (u_scroll ~ 0),
+  // eased to a quiet floor as you scroll into the content, so text contrast
+  // stays safe without leaning on a text-shadow halo.
+  float calm = 1.0 - smoothstep(0.0, 1.2, u_scroll) * 0.68;
+
   vec3 col = vec3(0.988, 0.988, 0.992) * chrome;
-  col = mix(col, vec3(0.45, 0.92, 1.0), halo * 0.42);
-  col = mix(col, vec3(0.9, 0.62, 0.95), fringe * 0.1);
-  col = mix(col, vec3(0.14, 0.28, 0.97), min(0.55, core * 0.85));
+  col = mix(col, vec3(0.45, 0.92, 1.0), halo * 0.42 * calm);
+  col = mix(col, vec3(0.9, 0.62, 0.95), fringe * 0.1 * calm);
+  col = mix(col, vec3(0.14, 0.28, 0.97), min(0.55, core * 0.85) * calm);
 
   // grain
   col += (hash1(gl_FragCoord.xy + fract(u_time)) - 0.5) * 0.012;

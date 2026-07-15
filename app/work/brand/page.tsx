@@ -79,27 +79,22 @@ export default function Brand() {
           as tokens, type as a scale, buttons and cards as exported pieces, so
           design and code stay one system rather than two that drift.
         </p>
-        <div className="pageframe">
-          <div className="pageframe-window">
-            <div className="pageframe-chrome" aria-hidden>
-              <span className="pageframe-dot" />
-              <span className="pageframe-dot" />
-              <span className="pageframe-dot" />
-              <span className="pageframe-url">threshold · design system</span>
-            </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/brand-designsystem-1.jpg"
-              alt="The Threshold design system: brand, colors, and type"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/brand-designsystem-2.jpg"
-              alt="The Threshold design system: spacing and components"
-            />
-          </div>
-          <p className="pageframe-hint">Scroll the full design system</p>
+        <p>
+          What follows isn’t a screenshot of it. It’s the real system, running:
+          animated chroma backgrounds, live components in their intended
+          states, and the hover, focus, and motion the product actually ships.
+          Scroll it, hover it, resize the window.
+        </p>
+        <div className="ds-live">
+          <iframe
+            src="/design-system.html"
+            title="The Threshold design system, running live"
+            loading="lazy"
+          />
         </div>
+        <p className="ds-live-hint">
+          Live and interactive · best on a wide screen
+        </p>
       </section>
 
       <nav className="footer-nav site-footer">

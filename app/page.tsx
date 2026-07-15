@@ -6,7 +6,7 @@ const projects = [
     slug: 'threshold-os',
     num: '01',
     title: 'Threshold OS: a client platform for an AI execution firm',
-    body: 'The core product: alignment, outcomes, learnings, and billing for Threshold’s clients. Designed end-to-end and built the same way, from the design system down to Postgres row-level security.',
+    body: 'The core product: alignment, outcomes, learnings, and billing for Threshold’s clients. Designed end-to-end and built the same way, from the design system down to the database it runs on.',
     caption: 'Threshold OS / client portal',
     img: '/images/threshold-os-cover.jpg',
   },
@@ -41,6 +41,10 @@ export default function Home() {
     <main className="page">
       <header className="intro">
         <span className="intro-name">Wes Norris</span>
+        <p className="availability">
+          <span className="dot" aria-hidden />
+          Open to remote Lead &amp; Senior Product Design roles
+        </p>
         <h1>Product design, shipped to production.</h1>
         <p className="sub">
           Lead Product Designer at{' '}
