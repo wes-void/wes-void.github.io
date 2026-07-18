@@ -154,20 +154,9 @@ export default function ThresholdOS() {
         <p>
           Only the middle of the lifecycle, live work, can ever carry that flag.
           When the company alignment changes underneath a running drive, the
-          affected objectives are flagged for exactly this, and nothing outside
-          those states can be.
+          affected objectives are flagged “needs review”, exactly the state the
+          constraint allows, and nothing outside those states can be.
         </p>
-        <figure>
-          <span className="shot">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/os-drift.jpg" alt="An operator dashboard flagging objectives that need review after the alignment changed" />
-          </span>
-          <figcaption>
-            The rule in the product: when the alignment changes underneath live
-            work, the affected objectives are flagged “needs review”, exactly the
-            state the constraint allows
-          </figcaption>
-        </figure>
       </section>
 
       {/* pair 3 — surface + law, scope: the whole multi-tenant boundary */}
