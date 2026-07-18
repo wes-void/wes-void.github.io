@@ -3,11 +3,12 @@ import Link from 'next/link'
 import { ObjectiveAnatomy } from '../../components/ObjectiveAnatomy'
 import { SurfaceAccordion } from '../../components/SurfaceAccordion'
 import { JourneyGallery } from '../../components/JourneyGallery'
+import { ChainFlow } from '../../components/ChainFlow'
 
 export const metadata: Metadata = {
   title: 'Threshold OS | Wes Norris',
   description:
-    'The multi-tenant platform behind an AI execution firm: three role-based surfaces from one codebase, an object model designed as UI and database constraint together, designed and built by one person.',
+    'The multi-tenant platform behind a done-for-you AI firm: three role-based surfaces from one codebase, an object model designed as UI and database constraint together, designed and built by one person.',
 }
 
 export default function ThresholdOS() {
@@ -57,15 +58,7 @@ export default function ThresholdOS() {
           <strong>run</strong> is an atomic execution attempt inside a drive. It
           was designed as a UI concept and a database shape in the same breath.
         </p>
-        <div className="chain-diagram" aria-hidden>
-          <span className="chain-node">Company-wide Alignment</span>
-          <span className="chain-arrow">→</span>
-          <span className="chain-node">Objective</span>
-          <span className="chain-arrow">→</span>
-          <span className="chain-node">Drive</span>
-          <span className="chain-arrow">→</span>
-          <span className="chain-node">Run</span>
-        </div>
+        <ChainFlow />
         <p>
           Each link is a promise the product makes to the people using it, and a
           law the database keeps no matter what. What follows is three of those
@@ -92,6 +85,9 @@ export default function ThresholdOS() {
           </span>
           <figcaption>The chain, as the client reads it: from company statement down to live work</figcaption>
         </figure>
+        <div className="pair-flow" aria-hidden>
+          <span className="pair-flow-label">enforced as</span>
+        </div>
         <div className="codeblock">
           <span className="codeblock-file">supabase/migrations/…company_wide_alignment.sql</span>
           <pre><code>{`CREATE UNIQUE INDEX company_wide_alignments_one_active_per_company
